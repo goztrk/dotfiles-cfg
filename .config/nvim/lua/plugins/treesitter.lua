@@ -1,0 +1,26 @@
+require('nvim-treesitter.configs').setup({
+	ensure_installed = {
+		'lua',
+		'python',
+		'javascript',
+		'css',
+		'dockerfile',
+		'gitignore',
+		'gitcommit',
+		'html',
+		'htmldjango',
+		'json',
+		'json5',
+		'make',
+		'markdown',
+		'regex',
+		'sql',
+		'ssh_config',
+		'toml',
+		'tsx',
+		'typescript',
+		'xml',
+		'yaml',
+	},
+})
+
