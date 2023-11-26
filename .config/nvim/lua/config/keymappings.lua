@@ -20,3 +20,8 @@ keymap('n', 'X', '"_X', silent)
 keymap('v', 'x', '"_x', silent)
 keymap('v', 'X', '"_X', silent)
 
+-- Telescope
+keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
+keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
+keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
+
