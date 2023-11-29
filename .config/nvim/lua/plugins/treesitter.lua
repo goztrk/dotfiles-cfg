@@ -21,6 +21,7 @@ require('nvim-treesitter.configs').setup({
 		'typescript',
 		'xml',
 		'yaml',
+		'bash',
 	},
 })
 
