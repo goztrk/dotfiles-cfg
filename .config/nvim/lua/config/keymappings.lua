@@ -20,8 +20,19 @@ keymap('n', 'X', '"_X', silent)
 keymap('v', 'x', '"_x', silent)
 keymap('v', 'X', '"_X', silent)
 
+
+-- Close buffer without exiting nvim
+keymap('n', '<leader>x', '<cmd>bd<CR>')
+
+-- Easy buffer switch
+keymap('n', '<Tab>', '<cmd>bnext<CR>')
+keymap('n', '<S-Tab>', '<cmd>bprev<CR>')
+
+keymap('n', '<leader>cd', '<cmd>cd %:p:h<CR>')
+
 -- Telescope
 keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
+
 

@@ -39,10 +39,14 @@ local options = {
   tabstop = 2,
 }
 
+
 local globals = {
   mapleader                   = ' ',        --- Map leader key to SPC
   maplocalleader              = ',',        --- Map local leader key to comma
   speeddating_no_mappings     = 1,          --- Disable default mappings for speeddating
+  python3_host_prog           = '~/.pyenv/versions/py3nvim/bin/python',
+	loaded_perl_provider        = 0,
+	loaded_ruby_provider        = 0,
 }
 
 vim.opt.shortmess:append('c');
