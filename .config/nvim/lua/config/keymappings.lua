@@ -35,4 +35,7 @@ keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 
+-- Python related
+keymap('n', '<leader>pi', '<cmd>silent !venv/bin/isort %<cr>', silent)
+keymap('n', '<leader>pb', '<cmd>silent !venv/bin/black -q %<cr>', silent)
 
