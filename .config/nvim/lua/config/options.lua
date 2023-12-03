@@ -1,6 +1,6 @@
 local options = {
   -- Make vim use system clipboard.
-  clipboard = 'unnamed,unnamedplus',
+  clipboard = 'unnamedplus',
 
 	timeoutlen = 400,
 	updatetime = 100,
