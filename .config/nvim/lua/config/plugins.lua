@@ -49,5 +49,22 @@ return {
 			{ 'L3MON4D3/LuaSnip' },
 		},
 	},
+	{
+    "numToStr/Comment.nvim",
+		lazy = false,
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+  },
+	-- Search motions
+  {
+    "folke/flash.nvim",
+		lazy = false,
+    event = "CmdlineEnter",
+    opts = require "plugins.flash",
+  },
 }
 
