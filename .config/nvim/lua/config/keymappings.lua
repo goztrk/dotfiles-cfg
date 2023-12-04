@@ -37,10 +37,6 @@ keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 
--- Python related
-keymap('n', '<leader>pi', '<cmd>silent !venv/bin/isort %<cr>', silent)
-keymap('n', '<leader>pb', '<cmd>silent !venv/bin/black -q %<cr>', silent)
-
 -- CTRL-w is annoying
 keymap('n', '<leader>w', '<c-w>', { noremap = true })
 
@@ -48,5 +44,6 @@ keymap('n', '<leader>w', '<c-w>', { noremap = true })
 keymap('n', '<leader>/r', ':source $MYVIMRC<cr>')
 keymap('n', '<leader>/c', ':tabnew $MYVIMRC<cr> <bar> :tcd %:p:h<cr>', silent)
 
+-- LSP related
 keymap({'n', 'v'}, '<leader>lf', '<cmd>Format<cr>')
 
