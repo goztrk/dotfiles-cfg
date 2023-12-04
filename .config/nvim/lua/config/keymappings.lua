@@ -20,6 +20,8 @@ keymap('n', 'X', '"_X', silent)
 keymap('v', 'x', '"_x', silent)
 keymap('v', 'X', '"_X', silent)
 
+-- Clear highlights
+keymap('n', '<leader>cl', '<cmd>nohl<cr>', silent)
 
 -- Close buffer without exiting nvim
 keymap('n', '<leader>x', '<cmd>bd<CR>')
@@ -38,4 +40,11 @@ keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 -- Python related
 keymap('n', '<leader>pi', '<cmd>silent !venv/bin/isort %<cr>', silent)
 keymap('n', '<leader>pb', '<cmd>silent !venv/bin/black -q %<cr>', silent)
+
+-- CTRL-w is annoying
+keymap('n', '<leader>w', '<c-w>', { noremap = true })
+
+-- Neovim related
+keymap('n', '<leader>/r', ':source $MYVIMRC<cr>')
+keymap('n', '<leader>/c', ':tabnew $MYVIMRC<cr> <bar> :tcd %:p:h<cr>', silent)
 
