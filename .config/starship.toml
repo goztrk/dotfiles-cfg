@@ -1,0 +1,6 @@
+command_timeout = 600
+format = """
+$username\
+$directory\
+$line_break\
+$character"""
