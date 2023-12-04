@@ -1,14 +1,13 @@
 require('nvim-treesitter.configs').setup({
 	ensure_installed = {
+		'bash',
 		'lua',
-		'python',
-		'javascript',
+		'html',
+		'htmldjango',
 		'css',
 		'dockerfile',
 		'gitignore',
 		'gitcommit',
-		'html',
-		'htmldjango',
 		'json',
 		'json5',
 		'make',
@@ -17,11 +16,12 @@ require('nvim-treesitter.configs').setup({
 		'sql',
 		'ssh_config',
 		'toml',
-		'tsx',
+		'javascript',
 		'typescript',
+		'tsx',
 		'xml',
 		'yaml',
-		'bash',
+		'python',
 	},
 })
 
