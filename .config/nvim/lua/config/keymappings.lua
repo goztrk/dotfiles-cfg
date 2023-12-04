@@ -48,3 +48,5 @@ keymap('n', '<leader>w', '<c-w>', { noremap = true })
 keymap('n', '<leader>/r', ':source $MYVIMRC<cr>')
 keymap('n', '<leader>/c', ':tabnew $MYVIMRC<cr> <bar> :tcd %:p:h<cr>', silent)
 
+keymap({'n', 'v'}, '<leader>lf', '<cmd>Format<cr>')
+
