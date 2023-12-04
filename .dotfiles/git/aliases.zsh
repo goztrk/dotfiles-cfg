@@ -29,3 +29,5 @@ alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase origin/$(git_main_branch) -i'
 
+alias gweb='gh repo view --web'
+
