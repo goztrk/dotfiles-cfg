@@ -13,6 +13,7 @@ alias cd..='cd ..'
 
 alias ee='emacsclient -nw -c'
 alias ef='e $(fzf)'
+alias envim="nvim -c 'edit \$MYVIMRC'"
 
 alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias lc='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
