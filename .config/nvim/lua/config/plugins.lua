@@ -44,7 +44,15 @@ return {
 			{
 				'stevearc/conform.nvim',
 				opts = {},
+				config = function()
+					require("plugins.conform")
+				end,
 			},
+			-- {
+			-- 	"pmizio/typescript-tools.nvim",
+			-- 	dependencies = { "nvim-lua/plenary.nvim" },
+			-- 	opts = {},
+			-- }
 		},
 	},
 	{
