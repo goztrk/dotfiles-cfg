@@ -18,7 +18,7 @@ local options = {
   -- Show line numbers on the left.
   -- TODO: In normal mode show normal numbers, and in insert mode show relative number
   number = true,
-  relativenumber = false,
+  relativenumber = true,
 
   -- Enable mouse support
   mouse = 'a',
@@ -37,6 +37,10 @@ local options = {
 	smarttab = true,
   softtabstop = 2,
   tabstop = 2,
+	foldcolumn = '1', -- '0' is not bad
+	foldlevel = 99, -- Using ufo provider need a large value, feel free to decrease the value
+	foldlevelstart = 99,
+	foldenable = true,
 }
 
 

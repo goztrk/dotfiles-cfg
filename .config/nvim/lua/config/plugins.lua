@@ -78,5 +78,13 @@ return {
     event = "CmdlineEnter",
     opts = require "plugins.flash",
   },
+	{
+		'kevinhwang91/nvim-ufo',
+		lazy = false,
+		dependencies = { 'kevinhwang91/promise-async' },
+		config = function()
+			require('plugins.ufo')
+		end,
+	},
 }
 
