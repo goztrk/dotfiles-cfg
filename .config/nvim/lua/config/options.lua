@@ -21,7 +21,7 @@ local options = {
   -- TODO: In normal mode show normal numbers, and in insert mode show relative number
   number = true,
   relativenumber = true,
-	signcolumn = 'yes:2',
+	signcolumn = 'yes',
 	colorcolumn = '80',
 
   -- Enable mouse support
