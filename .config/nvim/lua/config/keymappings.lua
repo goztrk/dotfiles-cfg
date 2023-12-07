@@ -10,6 +10,18 @@ keymap('n', 'H', '^', silent)
 keymap('v', '<', '<gv', silent)
 keymap('v', '>', '>gv', silent)
 
+-- Easy move lines in visual mode
+keymap('x', 'K', ":move '<-2<CR>gv=gv", silent)
+keymap('x', 'J', ":move '>+2<CR>gv=gv", silent)
+
+-- Keep cursor in the center when scrolling
+keymap('n', '<C-u>', '<C-u>zz', silent)
+keymap('n', '<C-d>', '<C-d>zz', silent)
+
+-- Keep cursor in the center when searching
+keymap('n', 'n', 'nzzzv', silent)
+keymap('n', 'N', 'Nzzzv', silent)
+
 -- Save file with CTRL-S
 keymap('n', '<C-s>', ':w<CR>')
 keymap('i', '<C-s>', '<ESC>:w<CR>')
@@ -26,6 +38,9 @@ keymap('n', '<leader>cl', '<cmd>nohl<cr>', silent)
 -- Close buffer without exiting nvim
 keymap('n', '<leader>x', '<cmd>bd<CR>')
 
+-- Don't yank when pasting
+keymap('x', '<leader>p', '"_dP', silent)
+
 -- Easy buffer switch
 keymap('n', '<Tab>', '<cmd>bnext<CR>')
 keymap('n', '<S-Tab>', '<cmd>bprev<CR>')
@@ -40,8 +55,7 @@ keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 -- CTRL-w is annoying
 keymap('n', '<leader>w', '<c-w>', { noremap = true })
 
--- Neovim related
-keymap('n', '<leader>/r', ':source $MYVIMRC<cr>')
+-- Open nvim config in a new tab
 keymap('n', '<leader>/c', ':tabnew $MYVIMRC<cr> <bar> :tcd %:p:h<cr>', silent)
 
 -- LSP related
