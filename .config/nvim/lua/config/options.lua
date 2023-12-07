@@ -2,6 +2,8 @@ local options = {
   -- Make vim use system clipboard.
   clipboard = 'unnamedplus',
 
+	wrap = false,
+
 	timeoutlen = 400,
 	updatetime = 100,
   termguicolors = true,
@@ -19,6 +21,8 @@ local options = {
   -- TODO: In normal mode show normal numbers, and in insert mode show relative number
   number = true,
   relativenumber = true,
+	signcolumn = 'yes:2',
+	colorcolumn = '80',
 
   -- Enable mouse support
   mouse = 'a',

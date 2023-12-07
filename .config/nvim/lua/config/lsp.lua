@@ -9,8 +9,40 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
+	ensure_installed = {
+		-- Generic
+		"bashls",
+		"dockerls",
+		-- Python
+		"pyright",
+		"black",
+		"isort",
+		"flake8",
+		"pyproject-flake8",
+		-- Web
+		"tsserver",
+		"eslint_d",
+		"prettier",
+		"prettierd",
+		"yamlls",
+		-- Lua / Vim
+		"lua_ls",
+		"vimls",
+		-- Rust
+		"rust_analyzer",
+	},
 	handlers = {
 		lsp_zero.default_setup,
 	},
+})
+
+local cmp = require('cmp')
+
+cmp.setup({
+	mapping = cmp.mapping.preset.insert({
+		['<C-s>'] = cmp.mapping.confirm({ select = false }),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.close(),
+	}),
 })
 

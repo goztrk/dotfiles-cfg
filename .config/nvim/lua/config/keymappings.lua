@@ -47,3 +47,11 @@ keymap('n', '<leader>/c', ':tabnew $MYVIMRC<cr> <bar> :tcd %:p:h<cr>', silent)
 -- LSP related
 keymap({'n', 'v'}, '<leader>lf', '<cmd>Format<cr>')
 
+keymap('n', '<leader>pv', vim.cmd.Ex)
+
+-- Trouble
+keymap('n', '<leader>lx', '<cmd>TroubleToggle quickfix<cr>')
+
+-- Undotree
+keymap('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
+
