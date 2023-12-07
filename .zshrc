@@ -17,6 +17,7 @@ if [[ -a ~/.localrc ]] then
 	source ~/.localrc
 fi
 
+
 # all of our zsh files
 typeset -U config_files
 config_files=($DOT/**/*.zsh)
@@ -173,3 +174,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export FLYCTL_INSTALL="/home/goztrk/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# load aliases
+source "$HOME/.dotfiles/aliases"

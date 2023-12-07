@@ -2,7 +2,10 @@
 # General
 #
 
+alias reload!='. ~/.zshrc'
 alias cls='clear'
+
+alias \?='alias | fzf'
 
 # Moving up from directory
 alias cd..='cd ..'
@@ -11,16 +14,30 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias ef='e $(fzf)'
+alias envim="nvim -c 'edit \$MYVIMRC'"
 
-alias cfg='usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias lc='lazygit --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias ld='lazydocker'
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Directory listing with Exa
+#
+if [ $(dpkg-query -W -f='${Status}' exa 2>/dev/null | grep -c "ok installed") -eq 1 ];
+then
+	alias ls='exa --grid --color=always --icons --group-directories-first'
+	alias lt='exa --tree --level=2 --icons --color=always --group-directories-first'
+	alias ll='exa -l --color=always --icons --group-directories-first'
+	alias la='exa -la --color=always --icons --group-directories-first'
+fi
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # tmux
 #
 alias tma='tmux attach -t'
-alias tad='tmux attach -d -t'
+alias tmc='tmux new-session -A -s'
 alias tms='tmux new-session -s'
 alias tml='tmux list-sessions'
 alias tksv='tmux kill-server'
@@ -61,11 +78,13 @@ alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase origin/$(git_main_branch) -i'
 
+gweb='gh repo view --web'
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Python
 #
-alias vpy="venv/bin/python"
+alias py="venv/bin/python"
 alias vpip="venv/bin/pip"
 alias venv-activate="source venv/bin/activate"
 alias dj="venv/bin/python manage.py"
@@ -77,3 +96,7 @@ alias dj="venv/bin/python manage.py"
 alias dcup='docker compose up -d'
 alias dcdown='docker compose down'
 alias dcbuild='docker compose up -d --no-deps --build'
+
+function dcsh() {
+	docker exec -it $1 /bin/sh
+}
