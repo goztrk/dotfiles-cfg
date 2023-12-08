@@ -14,7 +14,7 @@ require('mason-lspconfig').setup({
 		"bashls",
 		"dockerls",
 		-- Python
-		"pyright",
+		"pylsp",
 		"black",
 		"isort",
 		"flake8",
