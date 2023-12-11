@@ -15,16 +15,16 @@ require('mason-lspconfig').setup({
 		"dockerls",
 		-- Python
 		"pylsp",
-		"black",
 		"isort",
 		"flake8",
 		"pyproject-flake8",
+		"black",
 		-- Web
 		"tsserver",
 		"eslint_d",
+		"yamlls",
 		"prettier",
 		"prettierd",
-		"yamlls",
 		-- Lua / Vim
 		"lua_ls",
 		"vimls",
