@@ -1,3 +1,4 @@
+KERNEL=`uname -s`
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # General
 #
@@ -24,8 +25,9 @@ alias ld='lazydocker'
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Directory listing with Exa
 #
-if [ $(dpkg-query -W -f='${Status}' exa 2>/dev/null | grep -c "ok installed") -eq 1 ];
-then
+# Only enable those if MacOS or Linux with `exa` installed
+# Well if it is MacOS it means its my computer and I installed exa
+if [[ $KERNEL == "Darwin" ]] || [ $(dpkg-query -W -f='${Status}' exa 2>/dev/null | grep -c "ok installed") -eq 1 ]; then
 	alias ls='exa --grid --color=always --icons --group-directories-first'
 	alias lt='exa --tree --level=2 --icons --color=always --group-directories-first'
 	alias ll='exa -l --color=always --icons --group-directories-first'
