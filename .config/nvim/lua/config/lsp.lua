@@ -1,13 +1,28 @@
+local lspconfig = require('lspconfig')
 local lsp_zero = require('lsp-zero')
-lsp_zero.extend_lspconfig()
 
-lsp_zero.on_attach(function(client, bufnr)
+lsp_zero.extend_lspconfig()
+lsp_zero.on_attach(function(_, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
-	lsp_zero.default_keymaps({buffer = bufnr})
+	lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
-require('mason').setup({})
+
+require('mason').setup({
+	ensure_installed = {
+		-- Python
+		"ruff",
+		"black",
+		"isort",
+		"flake8",
+		"pyproject-flake8",
+		-- Web
+		"eslint_d",
+		"prettier",
+		"prettierd",
+	}
+})
 require('mason-lspconfig').setup({
 	ensure_installed = {
 		-- Generic
@@ -15,16 +30,10 @@ require('mason-lspconfig').setup({
 		"dockerls",
 		-- Python
 		"pylsp",
-		"isort",
-		"flake8",
-		"pyproject-flake8",
-		"black",
+		"ruff_lsp",
+		-- "pyright",
 		-- Web
 		"tsserver",
-		"eslint_d",
-		"yamlls",
-		"prettier",
-		"prettierd",
 		-- Lua / Vim
 		"lua_ls",
 		"vimls",
@@ -33,11 +42,48 @@ require('mason-lspconfig').setup({
 	},
 	handlers = {
 		lsp_zero.default_setup,
+		pylsp = function ()
+			lspconfig.pylsp.setup({
+				settings = {
+					pylsp = {
+						plugins = {
+							-- pylsp_mypy = { enabled = true },
+							-- Disabled
+							black = { enabled = false },
+							-- pylint = { enabled = false, executable = "pylint" },
+							-- ruff = { enabled = false },
+							flake8 = { enabled = false },
+							pyls_isort = { enabled = false },
+							pycodestyle = { enabled = false },
+							pyflakes = { enabled = false },
+						},
+					},
+				},
+			})
+		end,
+		-- pyright = function()
+		-- 	lspconfig.pyright.setup({
+		-- 		before_init = function(_, config)
+		-- 			local new_path = require('config.utilities').get_python_path(config.root_dir)
+		-- 			config.settings.python.pythonPath = new_path
+		-- 		end,
+		-- 		settings = {
+		-- 			python = {
+		-- 				analysis = {
+		-- 					autoSearchPaths = true,
+		-- 					diagnosticMode = "workspace",
+		-- 					useLibraryCodeForTypes = true,
+		-- 					disableOrganizeImports = true,
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	})
+		-- end,
 	},
 })
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
