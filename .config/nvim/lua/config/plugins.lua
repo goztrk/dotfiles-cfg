@@ -143,5 +143,5 @@ return {
 				move_cursor = false,
 			})
 		end
-	}
+	},
 }
