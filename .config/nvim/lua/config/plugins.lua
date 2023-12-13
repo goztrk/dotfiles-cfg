@@ -5,7 +5,7 @@ return {
 		name = 'rose-pine',
 		config = function()
 			require('plugins.rose-pine')
-			vim.cmd[[colorscheme rose-pine]]
+			vim.cmd [[colorscheme rose-pine]]
 		end,
 	},
 	{
@@ -41,21 +41,21 @@ return {
 		'neovim/nvim-lspconfig',
 		dependencies = {
 			-- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+			{ 'neovim/nvim-lspconfig' },
+			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason-lspconfig.nvim' },
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+			-- Autocompletion
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'saadparwaiz1/cmp_luasnip' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-nvim-lua' },
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
+			-- Snippets
+			{ 'L3MON4D3/LuaSnip' },
+			{ 'rafamadriz/friendly-snippets' },
 			{
 				'stevearc/conform.nvim',
 				opts = {},
@@ -66,20 +66,20 @@ return {
 		},
 	},
 	{
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup {
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-      }
-    end,
-    dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
-  },
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup {
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			}
+		end,
+		dependencies = "JoosepAlviste/nvim-ts-context-commentstring",
+	},
 	-- Search motions
-  {
-    "folke/flash.nvim",
-    event = "CmdlineEnter",
-    opts = require "plugins.flash",
-  },
+	{
+		"folke/flash.nvim",
+		event = "CmdlineEnter",
+		opts = require "plugins.flash",
+	},
 	{
 		'kevinhwang91/nvim-ufo',
 		dependencies = { 'kevinhwang91/promise-async' },
@@ -119,5 +119,29 @@ return {
 			},
 		},
 	},
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				keymaps = {
+					normal = '<leader>sa',
+					normal_cur = false,
+					normal_line = false,
+					normal_cur_line = false,
+					visual = '<leader>s',
+					visual_line = '<leader>S',
+					delete = '<leader>sd',
+					change = '<leader>sr',
+				},
+				aliases = {
+					['i'] = ']', -- Index
+					['r'] = ')', -- Round
+					['b'] = '}', -- Brackets
+				},
+				move_cursor = false,
+			})
+		end
+	}
 }
-
