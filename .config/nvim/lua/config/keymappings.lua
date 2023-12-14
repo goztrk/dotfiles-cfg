@@ -51,6 +51,7 @@ keymap('n', '<leader>cd', '<cmd>cd %:p:h<CR>')
 keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
+keymap('n', '<leader>fj', '<cmd>lua require("telescope").extensions.gitmoji.gitmoji()<cr>')
 
 -- CTRL-w is annoying
 keymap('n', '<leader>w', '<c-w>', { noremap = true })

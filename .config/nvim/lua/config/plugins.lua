@@ -28,8 +28,12 @@ return {
 	},
 	{
 		'nvim-telescope/telescope.nvim',
+		config = function()
+			require('plugins.telescope')
+		end,
 		dependencies = {
 			'nvim-lua/plenary.nvim',
+			'olacin/telescope-gitmoji.nvim',
 		},
 	},
 	{
