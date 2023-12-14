@@ -69,6 +69,7 @@ alias gcob='git checkout -b'
 
 alias gpu='git push'
 alias gpl='git pull'
+alias gplr='git pull --recurse-submodules'
 alias gpuuo='git push --set-upstream origin $(git_current_branch)'
 
 alias gl='git log'
