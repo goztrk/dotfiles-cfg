@@ -52,6 +52,7 @@ keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = '[Telescope]
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { desc = '[Telescope] Live grep' })
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = '[Telescope] Find in buffers' })
 keymap('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', { desc = '[Telescope] Find keymaps' })
+keymap('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { desc = '[Telescope] Find in current buffer' })
 keymap('n', '<leader>fj', '<cmd>lua require("telescope").extensions.gitmoji.gitmoji()<cr>',
 	{ desc = '[Telescope] Find gitmoji' })
 
