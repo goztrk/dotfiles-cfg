@@ -177,7 +177,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
 
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
+
 
 # load aliases
 source "$HOME/.dotfiles/aliases"
