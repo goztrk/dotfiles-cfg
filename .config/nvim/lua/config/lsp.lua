@@ -8,6 +8,18 @@ lsp_zero.on_attach(function(_, bufnr)
 	lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
+-- Correct folding with nvim-ufo
+lsp_zero.set_server_config({
+  capabilities = {
+    textDocument = {
+      foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      },
+    },
+  },
+})
+
 
 require('mason').setup({
 	ensure_installed = {
@@ -56,6 +68,13 @@ require('mason-lspconfig').setup({
 							pyls_isort = { enabled = false },
 							pycodestyle = { enabled = false },
 							pyflakes = { enabled = false },
+							pyls_mypy = {
+								enabled = true,
+								report_progress = true,
+								live_mode = false,
+								overrides = { "--python-executable", py_path = true, },
+							},
+							jedi_completion = { fuzzy = false },
 						},
 					},
 				},
